@@ -17,11 +17,12 @@ for iter = 1:num_iters
     %       of the cost function (computeCost) and gradient here.
     %
 
+    h = X * theta % vector with the results for h(x)
+    errors = (h - y)
 
-
-
-
-
+    for iter2 = 1:size(X, 2)
+        theta(iter2) = theta(iter2) - (alpha/m) * sum(errors .* X(:, iter2))
+    end
 
     % ============================================================
 
