@@ -18,14 +18,14 @@ for iter = 1:num_iters
     %
 
 
-    h = X * theta % vector with the results for h(x)
-    errors = (h - y)
+    h = X * theta; % vector with the results for h(x)
+    errors = (h - y);
 
-    for iter2 = 1:size(X, 2)
-        theta(iter2) = theta(iter2) - (alpha/m) * sum(errors .* X(:, iter2))
-    end
+    % for iter2 = 1:size(X, 2)
+    %     theta(iter2) = theta(iter2) - (alpha/m) * sum(errors .* X(:, iter2))
+    % end
 
-
+    theta = theta - ((alpha/m) * ones(size(X, 2), 1)) * sum(errors' * X, 2);
 
     % ============================================================
 
