@@ -26,7 +26,7 @@ for iter = 1:num_iters
     % end
 
     % VECTORIZED
-    theta = theta - ((alpha/m) * ones(size(X, 2), 1)) * sum(errors' * X, 2);
+    theta = theta - ((alpha/m) * ones(size(X, 2), 1)) .* (errors' * X)';
 
     % ============================================================
 
